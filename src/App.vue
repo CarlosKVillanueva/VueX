@@ -4,7 +4,19 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
+	<CounterComp/>
 </template>
+
+<script>
+import { defineAsyncComponent } from "vue";
+
+export default {
+	name: 'App',
+	components: {
+		CounterComp: defineAsyncComponent(() => import('@/components/CounterComp'))
+	}
+}
+</script>
 
 <style>
 #app {
